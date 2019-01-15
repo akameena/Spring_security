@@ -19,4 +19,21 @@ public class startController {
 		return "login";
 	}
 	
+	@GetMapping("/hr")
+	public String hr()
+	{
+		return "hr";
+	}
+	
+	@GetMapping("/accountant")
+	public String account()
+	{
+		return "accountant";
+	}
+	@GetMapping("/restrication")
+	public String restrication()
+	{
+		return "restrication";
+	}
+	
 }
