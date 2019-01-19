@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		//.anyRequest().authenticated()
 		.antMatchers("/").hasRole("EMP")
-		.antMatchers("/hr/**").hasRole("HR")
+		.antMatchers("/hr").hasRole("HR")
 		.antMatchers("/accountant").hasRole("ACCOUNTANT")
 		.and()
 			.formLogin()

@@ -5,20 +5,23 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.catalina.valves.StuckThreadDetectionValve;
-import org.apache.coyote.http11.Http11AprProtocol;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.anil.exception.EmpErrorResponse;
 import com.anil.exception.EmpNotFound;
 import com.anil.model.Employee;
 
-@org.springframework.web.bind.annotation.RestController
-public class RestController {
+@RestController
+public class RestController1{
 
 	List<Employee> emp = new ArrayList<Employee>();
 	@PostConstruct
@@ -46,6 +49,33 @@ public class RestController {
 		
 	}
 	
+	@GetMapping("/hr/emp")
+	public List<Employee> emplists()
+	{
+		return emp;
+		
+	}
+	
+	@PostMapping("/hr/emps")
+	public void empadd(@RequestBody  Employee obj)
+	{
+		System.out.println("***we get yr object");
+		
+		
+	}
+	@PutMapping("/hr/empp")
+	public void empupdate(@RequestBody  Employee obj)
+	{
+		System.out.println("***we get yr object in put");
+		
+		
+	}
+	@DeleteMapping("hr/empd/{eid}")
+	public void delete(@PathVariable int id)
+	{
+		System.out.println("we get id: "+id+"for delete");
+		
+	}
 	@ExceptionHandler
 	public ResponseEntity<EmpErrorResponse> handle(EmpNotFound exe)
 	{

@@ -6,6 +6,11 @@ public class Employee {
 	 private String name;
 	 private String department;
 	 
+	 
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Employee(int id, String name, String department) {
 		super();
 		this.id = id;
