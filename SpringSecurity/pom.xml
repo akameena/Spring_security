@@ -20,6 +20,19 @@
     <artifactId>spring-webmvc</artifactId>
     <version>5.0.12.RELEASE</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.5.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.47</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 <dependency>
     <groupId>org.springframework.security</groupId>
@@ -34,6 +47,8 @@
 </dependency>
 
 
+
+
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 <dependency>
     <groupId>org.springframework.security</groupId>
@@ -41,8 +56,30 @@
     <version>5.0.10.RELEASE</version>
 </dependency>
 
-    
-  </dependencies>
+<!-- Add Jackson for JSON converters -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.5</version>
+		</dependency>
+
+		<!-- Add Servlet support for 
+			 Spring's AbstractAnnotationConfigDispatcherServletInitializer -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- Add support for JSP ... get rid of Eclipse error -->				 
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+				 
+	</dependencies>
+
   <build>
     <finalName>SpringSecurity</finalName>
   </build>
